@@ -30,18 +30,27 @@ const images = [
 
 
 
-const gallery = document.querySelector(".gallery");
+// const gallery = document.querySelector(".gallery");
 
-images.forEach((image) => {
-  const listItem = document.createElement("li");
-  const img = document.createElement("img");
+// images.forEach((image) => {
+//   const listItem = document.createElement("li");
+//   const img = document.createElement("img");
   
-  img.src = image.url;
-  img.alt = image.alt;
+//   img.src = image.url;
+//   img.alt = image.alt;
   
-  listItem.appendChild(img);
+//   listItem.appendChild(img);
 
-  listItem.classList.add("image-item");
+//   listItem.classList.add("image-item");
   
-  gallery.appendChild(listItem);
-});
+//   gallery.appendChild(listItem);
+// });
+
+const list = document.querySelector('.gallery');
+const murcup = images
+  .map(
+    ({ url, alt }) =>
+      `<li class="picture"><img src= "${url}" alt= "${alt}"/></li>`
+  )
+  .join('');
+list.insertAdjacentHTML('afterbegin', murcup);

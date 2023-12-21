@@ -3,19 +3,31 @@
 // <input type="text" id="name-input" placeholder="Please enter your name" />
 // <h1>Hello, <span id="name-output">Anonymous</span>!</h1>
 
-const form = document.querySelector('#name-input');
-const text = document.querySelector('h1');
-const span = document.querySelector('#name-output');
+// const form = document.querySelector('#name-input');
+// const text = document.querySelector('h1');
+// const span = document.querySelector('#name-output');
 
-form.addEventListener('input', e => {
-    e.preventDefault();
+// form.addEventListener('input', e => {
+//     e.preventDefault();
     
-    const formInput = e.target.value.trim();
+//     const formInput = e.target.value.trim();
     
-  if (formInput === '') {
-    console.log(text.textContent);
-  } else {
-    span.textContent = `${formInput}`;
-    console.log(span);
-  }
+//   if (formInput === '') {
+//     console.log(text.textContent);
+//   } else {
+//     span.textContent = `${formInput}`;
+//     console.log(span);
+//   }
+// });
+
+
+const textInput = document.querySelector("#name-input");
+const output = document.querySelector("#name-output");
+
+textInput.addEventListener("input", (event) => {
+    if (event.currentTarget.value.trim() == "") {
+        output.textContent = "Anonymous";
+    } else {
+        output.textContent = event.currentTarget.value.trim();
+    }
 });
